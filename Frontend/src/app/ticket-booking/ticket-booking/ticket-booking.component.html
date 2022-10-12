@@ -1,0 +1,31 @@
+<body class = "booking">
+    <div class="container-fluid">
+        <div class="card-body">
+           
+            <div class ="card-details">
+                <form [formGroup]="bookingOrderDetail">
+                    <label for="name" class="form-label">NAME</label>
+                    <input type="text" formControlName="id" class="form-control" id="id" placeholder="Enter your Name" ><br/> 
+                    
+                    <label for="exampleFormControlInput1" class="form-label">SOURCE </label>
+                    <input type="text" formControlName="source" class="form-control" id="source" placeholder="Enter Source"> <br/>
+                    
+                    <label for="exampleFormControlInput1" class="form-label">DESTINATION </label>
+                    <input type="text" formControlName="destination" class="form-control" id="destination" placeholder="Enter Destination"><br/>
+                    
+                    <label for="exampleFormControlInput1" class="form-label">NUMBER OF PASSENGERS </label>                        
+                    <input type="number" formControlName="passengers" class="form-control" id="passengers" placeholder="Enter Number of Passengers" min="1" ><br/>
+                    
+                    <label for="exampleFormControlInput1" class="form-label">BOOK TICKETS ON </label><br/>
+                    <input type="date"  class="form-control" id="Test_DatetimeLocal">
+                        
+                </form>
+            </div><br/>          
+        </div>
+       <!-- <button type="button" class="btn btn-success"  (click)="delete()" ><i class="fa fa-check"></i> delete tickets</button>-->
+       <!-- <button type="button" class="btn btn-success"  (click)="addOrder()" [routerLink]="[paymentLink]"><i class="fa fa-check"></i> Confirm and Book tickets</button>-->
+        <a href="http://localhost:8083" class="btn btn-primary" (click)="addOrder()">Confirm and Book Tickets</a>
+    </div>
+   
+</body>
+    
