@@ -1,0 +1,155 @@
+<div class="container-fluid">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand">Train Details</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class ="btn btn-right">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addTrain" type="submit"><i class="fa fa-plus"></i>  Add Train Details</button>
+          </div>
+          </div>
+        </div>
+    </nav>
+
+
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">TRAIN ID</th>
+            <th scope="col">TRAIN NAME</th>
+            <th scope="col">SOURCE</th>
+            <th scope="col">DESTINATION</th>
+            <th scope="col">RUN DAYS</th>
+            <th scope="col">ARRIVAL TIME</th>
+            <th scope="col">DEPARTURE TIME</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of trainList;">
+            <td>{{e.trainid}}</td>
+            <td>{{e.trainName}}</td>
+            <td>{{e.source}}</td>
+            <td>{{e.destination}}</td>
+            <td>{{e.runDays}}</td>
+            <td>{{e.arrivalTime}}</td>
+            <td>{{e.departureTime}}</td>
+            <td>
+                <button type="button" name ="edit" class="btn" data-bs-toggle="modal" data-bs-target="#editTrain" (click)="editTrain(e)"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                <button type="button" class="btn"  (click)="deleteTrain(e)"><i class="fa fa-trash"></i></button>
+                
+            </td>
+
+          </tr>
+          
+        </tbody>
+      </table>
+
+  
+  <!-- Add employee modal -->
+  <div class="modal fade" id="addTrain" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add new Train</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+            <form [formGroup]="trainDetail">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Train Id </label>
+                    <input type="text" formControlName="trainid" class="form-control" id="trainid" aria-describedby="emailHelp">
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Train Name </label>
+                  <input type="text" formControlName="trainName" class="form-control" id="trainName" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Source </label>
+                    <input type="text" formControlName="source" class="form-control" id="source" aria-describedby="emailHelp">
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Destination </label>
+                    <input type="text" formControlName="destination" class="form-control" id="destination" aria-describedby="emailHelp">
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Run Days </label>
+                    <input type="text" formControlName="runDays" class="form-control" id="runDays" aria-describedby="emailHelp">
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Arrival Time </label>
+                    <input type="text" formControlName="arrivalTime" class="form-control" id="arrivalTime" aria-describedby="emailHelp">
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Departure Time </label>
+                    <input type="text" formControlName="departureTime" class="form-control" id="departureTime" aria-describedby="emailHelp">
+                  </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa fa-close"></i>  Close</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="addTrain()"><i class="fa fa-check"></i>  Add Train</button>
+                  </div>
+              </form>
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Edit employee modal -->
+  <div class="modal fade" id="editTrain" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Train Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form [formGroup]="trainDetail">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Train Id </label>
+                    <input type="text" formControlName="trainid" class="form-control" id="trainid" aria-describedby="emailHelp">
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Train Name </label>
+                  <input type="text" formControlName="trainName" class="form-control" id="trainName" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Source </label>
+                    <input type="text" formControlName="source" class="form-control" id="source" aria-describedby="emailHelp">
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Destination </label>
+                    <input type="text" formControlName="destination" class="form-control" id="destination" aria-describedby="emailHelp">
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Run Days </label>
+                    <input type="text" formControlName="runDays" class="form-control" id="runDays" aria-describedby="emailHelp">
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Arrival Time </label>
+                    <input type="text" formControlName="arrivalTime" class="form-control" id="arrivalTime" aria-describedby="emailHelp">
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Departure Time </label>
+                    <input type="text" formControlName="departureTime" class="form-control" id="departureTime" aria-describedby="emailHelp">
+                  </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="fa fa-close"></i>  Close</button>
+                    <button type="button" class="btn btn-success" (click)="updateTrain()" data-bs-dismiss="modal"><i class="fa fa-check"></i>  Update </button>
+                  </div>
+              </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div> 

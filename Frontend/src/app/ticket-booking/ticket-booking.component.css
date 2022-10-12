@@ -1,0 +1,58 @@
+.container-fluid{  
+    justify-content: center;   
+}
+
+.card-body{
+    width: 50vh;
+    text-align: center;
+    margin-top: -14vh;
+   
+}
+.card-details{
+    margin-top: 3vh;
+}
+label{
+    text-align: left;
+}
+.container-fluid{
+    height: 600px;
+    width: 500px;
+    font-size: 100p;
+    background-color:9CF6F6;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(100px);
+    border: 10px solid rgba(199, 202, 214, 0.1);
+    box-shadow: 0 0 40px rgba(238, 237, 244, 0.6);
+    padding: 80px 55px;
+    justify-content: center;
+    margin-top: 5vh;
+    margin-left: -60vh;
+   
+  }
+body{ 
+    background-image:url('src\assets\trainarch.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 100vh;
+}
+.btn-primary{
+    text-align: center;
+    margin-left: 11vh;
+
+}
+.form-label{
+    font-size: large;
+    font-weight:500;
+    color: white;
+}
+
+input.ng-untouched{
+    border : 2px solid red;
+}
+input.ng-dirty{
+    border : 3px solid green;
+}

@@ -1,0 +1,14 @@
+
+img{
+   
+
+ 
+  height : 753px;
+  object-fit: cover;
+
+  
+}
+.carousel{
+    overflow: hidden !important; 
+}
+

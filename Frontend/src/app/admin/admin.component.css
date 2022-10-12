@@ -1,0 +1,25 @@
+.container-fluid{
+    margin-top: 5vh;
+}
+
+.fa-trash{
+    color: red;
+    font-size: 30px;
+   
+}
+.fa-edit{
+    color: #FFEA00;
+    font-size: 32px;
+   
+}
+.fa-plus{
+    font-size: 20px;
+}
+.btn-right{
+    text-align: right;
+}
+
+table{
+    text-align: center;
+}
+    
